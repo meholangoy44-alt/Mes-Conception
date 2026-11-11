@@ -1,0 +1,6 @@
+{
+  "name": "Kin-Sécurité Routière: Guide & Studio Vidéo Kinshasa",
+  "description": "Guide méthodologique et studio de création de campagnes vidéo de sensibilisation routière adaptées aux réalités de Kinshasa (Motos Wewa, Chauffeurs 207 et Poids Lourds).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
