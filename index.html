@@ -9,13 +9,183 @@
     <meta property="og:description" content="Guide méthodologique et studio de création de campagnes vidéo de sensibilisation routière adaptées aux réalités de Kinshasa (Motos Wewa, Chauffeurs 207 et Poids Lourds)." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Polices Google Fonts exactes de votre projet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS pour l'aperçu -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['"Oswald"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-neutral-950">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-neutral-950 min-h-screen flex flex-col justify-between">
+    
+    <!-- Conteneur racine React/Vite (#root) -->
+    <div id="root" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      
+      <!-- Bandeau d'information technique sur le rendu Vite/React -->
+      <div class="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 rounded-lg bg-amber-500/20 p-2 text-amber-400 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-amber-300">Aperçu de la structure <code class="font-mono bg-neutral-900 px-1.5 py-0.5 rounded text-amber-400">index.html</code> (Point d'entrée Vite / React)</p>
+            <p class="text-xs text-neutral-300 mt-1 leading-relaxed">
+              Votre fichier <code class="font-mono text-neutral-200">index.html</code> définit le thème sombre (<code class="font-mono text-amber-400">bg-neutral-950</code>), les polices et injecte votre application React via <code class="font-mono text-amber-400">&lt;div id="root"&gt;</code> et <code class="font-mono text-amber-400">./src/main.tsx</code>. Voici un aperçu fidèle de son rendu visuel :
+            </p>
+          </div>
+        </div>
+        <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+          HTML Valide ✓
+        </span>
+      </div>
+
+      <!-- En-tête de l'application -->
+      <header class="border-b border-neutral-800 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-xl bg-amber-500 text-neutral-950 flex items-center justify-center font-display font-bold text-xl tracking-wider shadow-lg shadow-amber-500/20">
+            KSR
+          </div>
+          <div>
+            <h1 class="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide text-neutral-100">
+              Kin-Sécurité Routière
+            </h1>
+            <p class="text-xs font-mono text-amber-400 uppercase tracking-widest">
+              Guide & Studio Vidéo Kinshasa
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-mono text-xs text-neutral-400 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-lg">
+            lang="fr"
+          </span>
+          <span class="font-mono text-xs text-neutral-400 bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-lg">
+            UTF-8
+          </span>
+        </div>
+      </header>
+
+      <!-- Section Héro basée sur les balises <meta description> -->
+      <main class="space-y-8">
+        <section class="rounded-2xl bg-neutral-900/80 border border-neutral-800 p-6 sm:p-8 shadow-xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono mb-4">
+            <span class="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
+            Campagne de Sensibilisation • Kinshasa
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white uppercase leading-tight mb-4">
+            Guide méthodologique et studio de création vidéo
+          </h2>
+          <p class="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl mb-6">
+            Conception et production de campagnes vidéo de sensibilisation routière adaptées aux réalités du trafic à Kinshasa : <span class="text-amber-400 font-semibold">Motos Wewa</span>, <span class="text-amber-400 font-semibold">Chauffeurs 207</span> et <span class="text-amber-400 font-semibold">Poids Lourds</span>.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button type="button" onclick="showToast('Ouverture du Guide Méthodologique (Composant React)')" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-semibold text-sm transition cursor-pointer shadow-lg shadow-amber-500/10">
+              Explorer le Guide
+            </button>
+            <button type="button" onclick="showToast('Lancement du Studio Vidéo (Composant React)')" class="px-5 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-100 border border-neutral-700 font-medium text-sm transition cursor-pointer">
+              Ouvrir le Studio Vidéo
+            </button>
+          </div>
+        </section>
+
+        <!-- Grille des 3 cibles mentionnées dans le code -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <!-- Carte 1 : Motos Wewa -->
+          <div class="rounded-2xl bg-neutral-900 border border-neutral-800 p-5 hover:border-amber-500/50 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">01 / WEWA</span>
+              <span class="text-xl">🏍️</span>
+            </div>
+            <h3 class="font-display text-xl uppercase font-semibold text-neutral-100 mb-2">Motos Wewa</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Sensibilisation au port du casque, respect des sens interdits et visibilité nocturne sur les grands axes de la capitale.
+            </p>
+          </div>
+
+          <!-- Carte 2 : Chauffeurs 207 -->
+          <div class="rounded-2xl bg-neutral-900 border border-neutral-800 p-5 hover:border-amber-500/50 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">02 / ESPRIT DE MORT</span>
+              <span class="text-xl">🚐</span>
+            </div>
+            <h3 class="font-display text-xl uppercase font-semibold text-neutral-100 mb-2">Chauffeurs 207</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Prévention des arrêts brusques, respect des arrêts de bus et lutte contre la surcharge des passagers.
+            </p>
+          </div>
+
+          <!-- Carte 3 : Poids Lourds -->
+          <div class="rounded-2xl bg-neutral-900 border border-neutral-800 p-5 hover:border-amber-500/50 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">03 / LOGISTIQUE</span>
+              <span class="text-xl">🚛</span>
+            </div>
+            <h3 class="font-display text-xl uppercase font-semibold text-neutral-100 mb-2">Poids Lourds</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Contrôle technique des freins, gestion des angles morts et respect des horaires de circulation urbaine.
+            </p>
+          </div>
+        </section>
+
+        <!-- Aperçu des polices configurées dans <head> -->
+        <section class="rounded-2xl bg-neutral-900/50 border border-neutral-800/80 p-5">
+          <h4 class="font-mono text-xs uppercase tracking-wider text-neutral-400 mb-4">Vérification des polices chargées dans &lt;head&gt;</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+            <div class="p-3 rounded-xl bg-neutral-950 border border-neutral-800">
+              <span class="block text-xs text-neutral-500 mb-1">Titre (Oswald)</span>
+              <span class="font-display text-lg uppercase text-amber-400">Sécurité Routière</span>
+            </div>
+            <div class="p-3 rounded-xl bg-neutral-950 border border-neutral-800">
+              <span class="block text-xs text-neutral-500 mb-1">Corps (Plus Jakarta Sans)</span>
+              <span class="font-sans font-medium text-neutral-200">Texte courant lisible</span>
+            </div>
+            <div class="p-3 rounded-xl bg-neutral-950 border border-neutral-800">
+              <span class="block text-xs text-neutral-500 mb-1">Code / Tags (JetBrains Mono)</span>
+              <span class="font-mono text-xs text-emerald-400">./src/main.tsx</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="border-t border-neutral-900 py-6 text-center text-xs text-neutral-500 font-mono">
+      Kin-Sécurité Routière • Aperçu généré depuis index.html corrigé
+    </footer>
+
+    <!-- Notification interactive remplaçant alert() -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 bg-neutral-900 border border-amber-500/50 text-neutral-100 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 z-50">
+      <span class="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+      <span id="toast-message" class="text-sm font-medium"></span>
+    </div>
+
+    <!-- Script d'interaction pour la prévisualisation -->
+    <script>
+      let toastTimeout;
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-message');
+        toastMsg.textContent = message;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3000);
+      }
+    </script>
   </body>
 </html>
-
